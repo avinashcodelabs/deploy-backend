@@ -1,7 +1,7 @@
 import { createServer } from "http";
 import { MongoClient } from "mongodb";
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 createServer(async (req, res) => {
   const uri = `mongodb+srv://mongouser:${process.env.dbpass}@cluster0.wikzryx.mongodb.net/?retryWrites=true&w=majority`;
   const client = new MongoClient(uri);
