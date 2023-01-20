@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 const PORT = 3001;
 createServer(async (req, res) => {
   const uri = `mongodb+srv://mongouser:${process.env.dbpass}@cluster0.wikzryx.mongodb.net/?retryWrites=true&w=majority`;
+  console.log(`mongodb connection string - `, uri);
   const client = new MongoClient(uri);
 
   try {
